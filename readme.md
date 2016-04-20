@@ -1,3 +1,5 @@
+![Powered by Virginia Commonwealth University](https://t4tools.vcu.edu/github/images/powered-by.svg)
+
 # VCUUtils.js Library
 *The Official VCU TerminalFour JS Library*
 
