@@ -7,6 +7,7 @@ var del = require('del'),
     gif = require('gulp-if'),
     jsdoc = require('gulp-jsdoc3'),
     jshint = require('gulp-jshint'),
+    replace = require('gulp-replace'),
     uglify = require('gulp-uglify'),
     stylish = require('jshint-stylish'),
     config = require('./gulpconfig.js');
@@ -15,11 +16,29 @@ var del = require('del'),
 gulp.task('default', ['build']);
 
 // Build master-task
-gulp.task('build', ['clean', 'build-library']);
+gulp.task('build', ['clean', 'build-library', 'readme']);
 
 // Clean super-task
 gulp.task('clean', function() {
     return del(config.v74.output + '/**/*.js');
+});
+
+// Readme super-task
+var randomQuery = (function() {
+    function randomString(length) {
+        var text = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        for(var i = 0; i < length; i++) {
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+        }
+        return text;
+    }
+    return '?' + randomString(14);
+})();
+gulp.task('readme', function() {
+    return gulp.src('./src/readme.md')
+        .pipe(replace(/\{\{random-query\}\}/g, randomQuery))
+        .pipe(gulp.dest('./'));
 });
 
 // Build library super-task
