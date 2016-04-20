@@ -7,6 +7,7 @@ var del = require('del'),
     gif = require('gulp-if'),
     jsdoc = require('gulp-jsdoc3'),
     jshint = require('gulp-jshint'),
+    rename = require('gulp-rename'),
     replace = require('gulp-replace'),
     uglify = require('gulp-uglify'),
     stylish = require('jshint-stylish'),
@@ -21,14 +22,16 @@ gulp.task('build', ['clean', 'build-library', 'readme']);
 
 // Clean super-task
 gulp.task('clean', function() {
-    return del(config.v74.output + '/**/*.js');
+    del(config.v74.output + '/**/*.js');
+    del('./readme.md');
 });
 
 // Readme super-task
 gulp.task('readme', function() {
-    return gulp.src('./src/readme.md')
+    return gulp.src('./src/src-readme.md')
         .pipe(replace(/\{\{random-query\}\}/g, functions.randomQuery))
         .pipe(replace(/\{\{date-string\}\}/g, functions.dateString))
+        .pipe(rename('readme.md'))
         .pipe(gulp.dest('./'));
 });
 
