@@ -1,11 +1,13 @@
-[![Powered by Virginia Commonwealth University](https://t4tools.vcu.edu/github/images/powered-by.svg?H3xFebRloqz5BE)](http://www.vcu.edu/)
+[![Powered by Virginia Commonwealth University](https://t4tools.vcu.edu/github/images/powered-by.svg?FD4XyvI1amxdwu)](http://www.vcu.edu/)
 
 # VCUUtils.js Library
 *The Official VCU TerminalFour JS Library*
 
-![Build Passing](https://t4tools.vcu.edu/github/images/build-passing.svg?H3xFebRloqz5BE)
+![Version 2.0.0_04.20.2016](https://img.shields.io/badge/version-2.0.0__04.20.2016-lightgrey.svg)
+![Build Passing](https://img.shields.io/badge/build-passing-brightgreen.svg)
+![Dev-Dependencies Up-To-Date](https://img.shields.io/badge/devDependencies-up--to--date-yellow.svg)
 
-## Version: 2.0.0_04.20.2016
+## Version: 2.0.0
 - Included parseInj module
     - .genInj(RegExp, startingInj, endingInj, string)
     - .classInj(string)
