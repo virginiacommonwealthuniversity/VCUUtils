@@ -88,20 +88,6 @@
 
     // Custom Globals
     "globals"       : { // additional predefined global variables
-        "T4Utils" : true ,
-        "importPackage" : true ,
-        "com" : true ,
-        "content" : true ,
-        "language" : true ,
-        "MediaManager" : true ,
-        "MediaUtils" : true ,
-        "dbStatement" : true ,
-        "section" : true ,
-        "publishCache" : true ,
-        "isPreview" : true,
-        "MessageDigest" : true,
-        "PathBuilder" : true,
-        "ContentHierarchy" : true,
-        "ContentManager" : true
+        "VCUUtils" : true
 	}
 }
