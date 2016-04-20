@@ -1,8 +1,11 @@
 /**
 * parseInj
-* @module VCUUtils.parseInj
+* @namespace parseInj
+* @extends VCUUtils
 * @author Joel Eisner <eisnerjr@vcu.edu>
 * @version 1.0.0
+* @example
+* VCUUtils.parseInj
 */
 /* jshint strict: false */
 VCUUtils.parseInj = VCUUtils.parseInj || {};
