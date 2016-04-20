@@ -3,6 +3,10 @@
   "version": "2.0.0",
   "description": "The VCU-Utils JS Library for TerminalFour",
   "author": "Joel Eisner <eisnerjr@vcu.edu>",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/virginiacommonwealthuniversity/VCUUtils"
+  },
   "license": "MIT",
   "devDependencies": {
     "del": "^2.2.0",
