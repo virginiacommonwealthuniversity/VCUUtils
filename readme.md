@@ -1,9 +1,9 @@
-[![Powered by Virginia Commonwealth University](https://t4tools.vcu.edu/github/images/powered-by.svg?dD4CccF4bLiXwO)](http://www.vcu.edu/)
+[![Powered by Virginia Commonwealth University](https://t4tools.vcu.edu/github/images/powered-by.svg?H3xFebRloqz5BE)](http://www.vcu.edu/)
 
 # VCUUtils.js Library
 *The Official VCU TerminalFour JS Library*
 
-![Build Passing](https://t4tools.vcu.edu/github/images/build-passing.svg?dD4CccF4bLiXwO)
+![Build Passing](https://t4tools.vcu.edu/github/images/build-passing.svg?H3xFebRloqz5BE)
 
 ## Version: 2.0.0_04.20.2016
 - Included parseInj module
