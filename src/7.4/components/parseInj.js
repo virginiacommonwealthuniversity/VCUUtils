@@ -4,6 +4,7 @@
 * @author Joel Eisner <eisnerjr@vcu.edu>
 * @version 1.0.0
 */
+/* jshint strict: false */
 VCUUtils.parseInj = VCUUtils.parseInj || {};
 
 /**
