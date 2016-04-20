@@ -10,7 +10,8 @@ var del = require('del'),
     replace = require('gulp-replace'),
     uglify = require('gulp-uglify'),
     stylish = require('jshint-stylish'),
-    config = require('./gulpconfig.js');
+    config = require('./gulpconfig.js'),
+    functions = require('./gulpfunctions.js');
 
 // Default task
 gulp.task('default', ['build']);
@@ -24,20 +25,10 @@ gulp.task('clean', function() {
 });
 
 // Readme super-task
-var randomQuery = (function() {
-    function randomString(length) {
-        var text = "";
-        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        for(var i = 0; i < length; i++) {
-            text += possible.charAt(Math.floor(Math.random() * possible.length));
-        }
-        return text;
-    }
-    return '?' + randomString(14);
-})();
 gulp.task('readme', function() {
     return gulp.src('./src/readme.md')
-        .pipe(replace(/\{\{random-query\}\}/g, randomQuery))
+        .pipe(replace(/\{\{random-query\}\}/g, functions.randomQuery))
+        .pipe(replace(/\{\{date-string\}\}/g, functions.dateString))
         .pipe(gulp.dest('./'));
 });
 
@@ -48,6 +39,7 @@ gulp.task('build-library', ['library-exp', 'library-min', 'library-doc']);
 gulp.task('library-exp', ['library-lint'], function() {
     return gulp.src(config.v74.input)
         .pipe(concat(config.v74.filename.expanded))
+        .pipe(replace(/\{\{date-string\}\}/g, functions.dateString))
         .pipe(gulp.dest(config.v74.output));
 });
 
@@ -55,6 +47,7 @@ gulp.task('library-exp', ['library-lint'], function() {
 gulp.task('library-min', ['library-lint'], function() {
     return gulp.src(config.v74.input)
         .pipe(concat(config.v74.filename.minified))
+        .pipe(replace(/\{\{date-string\}\}/g, functions.dateString))
         .pipe(uglify())
         .pipe(gulp.dest(config.v74.output));
 });
