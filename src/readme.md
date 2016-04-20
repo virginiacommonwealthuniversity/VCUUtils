@@ -5,7 +5,7 @@
 
 ![Build Passing](https://t4tools.vcu.edu/github/images/build-passing.svg{{random-query}})
 
-## Version: 2.0.0
+## Version: 2.0.0_{{date-string}}
 - Included parseInj module
     - .genInj(RegExp, startingInj, endingInj, string)
     - .classInj(string)
