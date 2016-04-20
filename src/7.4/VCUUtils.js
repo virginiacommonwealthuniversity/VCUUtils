@@ -16,7 +16,7 @@ var VCUUtils = (function(utils) {
     * @example
     * VCUUtils.version;
     */
-    utils.version = '2.0.0_04.19.16';
+    utils.version = '2.0.0_{{date-string}}';
 
     return utils;
 
