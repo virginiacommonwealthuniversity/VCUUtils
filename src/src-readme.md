@@ -11,8 +11,10 @@
 *2.1.0*
 - Included parseTemp module
     - .jade(string)
+
 *2.0.1*
 - Included todaysDate member
+
 *2.0.0*
 - Included parseInj module
     - .genInj(RegExp, startingInj, endingInj, string)

@@ -1,4 +1,4 @@
-[![Powered by Virginia Commonwealth University](https://t4tools.vcu.edu/github/images/powered-by.svg?Jv87L6id6XFPNN)](http://www.vcu.edu/)
+[![Powered by Virginia Commonwealth University](https://t4tools.vcu.edu/github/images/powered-by.svg?paObkgFPFfuFYV)](http://www.vcu.edu/)
 
 # VCUUtils.js Library
 *The Official VCU TerminalFour JS Library*
@@ -11,8 +11,10 @@
 *2.1.0*
 - Included parseTemp module
     - .jade(string)
+
 *2.0.1*
 - Included todaysDate member
+
 *2.0.0*
 - Included parseInj module
     - .genInj(RegExp, startingInj, endingInj, string)
