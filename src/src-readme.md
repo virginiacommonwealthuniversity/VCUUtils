@@ -4,7 +4,7 @@
 *The Official VCU TerminalFour JS Library*
 
 ![Version 2.1.0_{{date-string}}](https://img.shields.io/badge/version-2.1.0__{{date-string}}-lightgrey.svg)
-![Build Passing](https://img.shields.io/badge/build-testing-yellow.svg)
+![Build Passing](https://img.shields.io/badge/build-passing-brightgreen.svg)
 ![Dev-Dependencies Up-To-Date](https://img.shields.io/badge/devDependencies-up--to--date-yellow.svg)
 
 ## Version: 2.1.0
