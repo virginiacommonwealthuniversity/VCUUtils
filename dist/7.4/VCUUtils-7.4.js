@@ -16,7 +16,23 @@ var VCUUtils = (function(utils) {
     * @example
     * VCUUtils.version;
     */
-    utils.version = '2.0.0_04.20.2016';
+    utils.version = '2.0.0_04.22.2016';
+
+    /**
+    * Todays date as a formatted date string
+    * @member todaysDate
+    * @returns {string} a date string (i.e. Friday, April 22, 2016)
+    * @example
+    * VCUUtils.todaysDate;
+    */
+    utils.todaysDate = (function() {
+        var now = new Date(),
+            days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            date = ((now.getDate() < 10) ? "0" : "") + now.getDate(),
+            today = days[now.getDay()] + ", " + months[now.getMonth()] + " " + date + ", " + now.getFullYear();
+        return today;
+    })();
 
     return utils;
 
