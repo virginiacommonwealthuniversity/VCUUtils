@@ -3,12 +3,17 @@
 # VCUUtils.js Library
 *The Official VCU TerminalFour JS Library*
 
-![Version 2.0.1_{{date-string}}](https://img.shields.io/badge/version-2.0.1__{{date-string}}-lightgrey.svg)
-![Build Passing](https://img.shields.io/badge/build-passing-brightgreen.svg)
+![Version 2.1.0_{{date-string}}](https://img.shields.io/badge/version-2.1.0__{{date-string}}-lightgrey.svg)
+![Build Passing](https://img.shields.io/badge/build-testing-yellow.svg)
 ![Dev-Dependencies Up-To-Date](https://img.shields.io/badge/devDependencies-up--to--date-yellow.svg)
 
-## Version: 2.0.1
+## Version: 2.1.0
+*2.1.0*
+- Included parseTemp module
+    - .jade(string)
+*2.0.1*
 - Included todaysDate member
+*2.0.0*
 - Included parseInj module
     - .genInj(RegExp, startingInj, endingInj, string)
     - .classInj(string)
