@@ -4,7 +4,8 @@ module.exports = {
     v74: {
         input: [
             './src/7.4/VCUUtils.js',
-            './src/7.4/components/parseInj.js'
+            './src/7.4/components/parseInj.js',
+            './src/7.4/components/parseTemp.js'
         ],
         filename: {
             expanded: 'VCUUtils-7.4.js',
