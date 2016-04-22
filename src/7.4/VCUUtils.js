@@ -16,7 +16,7 @@ var VCUUtils = (function(utils) {
     * @example
     * VCUUtils.version;
     */
-    utils.version = '2.0.0_{{date-string}}';
+    utils.version = '2.1.0_{{date-string}}';
 
     /**
     * Todays date as a formatted date string
