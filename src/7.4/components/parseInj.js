@@ -1,9 +1,9 @@
 /**
-* parseInj
+* parseInj - The Injector Parsing Module
 * @namespace parseInj
 * @extends VCUUtils
 * @author Joel Eisner <eisnerjr@vcu.edu>
-* @version 1.0.0
+* @version 1.0.1
 * @example
 * VCUUtils.parseInj
 */
@@ -42,16 +42,8 @@ VCUUtils.parseInj.genInj = function (rgx, injectorStart, injectorEnd, str) {
 * VCUUtils.parseInj.classInj(string);
 */
 VCUUtils.parseInj.classInj = function (str) {
-    // VCUUtils.parseInj.genInj
-    function parseInj (rgx, injectorStart, injectorEnd, str) {
-        var matchedStr = str.match(rgx);
-        if (null !== matchedStr) {
-            var r = matchedStr[0].replace(injectorStart, '').replace(injectorEnd, '');
-            return r;
-        }
-    }
     // Return of class:{...}
-    return parseInj(/class:{([^}]+)\}/g, 'class:{', '}', str);
+    return VCUUtils.parseInj.genInj(/class:{([^}]+)\}/g, 'class:{', '}', str);
 };
 
 /**
@@ -63,16 +55,8 @@ VCUUtils.parseInj.classInj = function (str) {
 * VCUUtils.parseInj.idInj(string);
 */
 VCUUtils.parseInj.idInj = function (str) {
-    // VCUUtils.parseInj.genInj
-    function parseInj (rgx, injectorStart, injectorEnd, str) {
-        var matchedStr = str.match(rgx);
-        if (null !== matchedStr) {
-            var r = matchedStr[0].replace(injectorStart, '').replace(injectorEnd, '');
-            return r;
-        }
-    }
     // Return of id:{...}
-    return parseInj(/id:{([^}]+)\}/g, 'id:{', '}', str);
+    return VCUUtils.parseInj.genInj(/id:{([^}]+)\}/g, 'id:{', '}', str);
 };
 
 /**
@@ -84,16 +68,8 @@ VCUUtils.parseInj.idInj = function (str) {
 * VCUUtils.parseInj.styleInj(string);
 */
 VCUUtils.parseInj.styleInj = function (str) {
-    // VCUUtils.parseInj.genInj
-    function parseInj (rgx, injectorStart, injectorEnd, str) {
-        var matchedStr = str.match(rgx);
-        if (null !== matchedStr) {
-            var r = matchedStr[0].replace(injectorStart, '').replace(injectorEnd, '');
-            return r;
-        }
-    }
     // Return of style:{...}
-    return parseInj(/style:{([^}]+)\}/g, 'style:{', '}', str);
+    return VCUUtils.parseInj.genInj(/style:{([^}]+)\}/g, 'style:{', '}', str);
 };
 
 /**
@@ -105,16 +81,8 @@ VCUUtils.parseInj.styleInj = function (str) {
 * VCUUtils.parseInj.layoutInj(string);
 */
 VCUUtils.parseInj.layoutInj = function (str) {
-    // VCUUtils.parseInj.genInj
-    function parseInj (rgx, injectorStart, injectorEnd, str) {
-        var matchedStr = str.match(rgx);
-        if (null !== matchedStr) {
-            var r = matchedStr[0].replace(injectorStart, '').replace(injectorEnd, '');
-            return r;
-        }
-    }
     // Return of layout:{...}
-    return parseInj(/layout:{([^}]+)\}/g, 'layout:{', '}', str);
+    return VCUUtils.parseInj.genInj(/layout:{([^}]+)\}/g, 'layout:{', '}', str);
 };
 
 /**
@@ -126,16 +94,8 @@ VCUUtils.parseInj.layoutInj = function (str) {
 * VCUUtils.parseInj.beforeInj(string);
 */
 VCUUtils.parseInj.beforeInj = function (str) {
-    // VCUUtils.parseInj.genInj
-    function parseInj (rgx, injectorStart, injectorEnd, str) {
-        var matchedStr = str.match(rgx);
-        if (null !== matchedStr) {
-            var r = matchedStr[0].replace(injectorStart, '').replace(injectorEnd, '');
-            return r;
-        }
-    }
     // Return of before:{...}
-    return parseInj(/before:{([^}]+)\}/g, 'before:{', '}', str);
+    return VCUUtils.parseInj.genInj(/before:{([^}]+)\}/g, 'before:{', '}', str);
 };
 
 /**
@@ -147,14 +107,6 @@ VCUUtils.parseInj.beforeInj = function (str) {
 * VCUUtils.parseInj.afterInj(string);
 */
 VCUUtils.parseInj.afterInj = function (str) {
-    // VCUUtils.parseInj.genInj
-    function parseInj (rgx, injectorStart, injectorEnd, str) {
-        var matchedStr = str.match(rgx);
-        if (null !== matchedStr) {
-            var r = matchedStr[0].replace(injectorStart, '').replace(injectorEnd, '');
-            return r;
-        }
-    }
     // Return of after:{...}
-    return parseInj(/after:{([^}]+)\}/g, 'after:{', '}', str);
+    return VCUUtils.parseInj.genInj(/after:{([^}]+)\}/g, 'after:{', '}', str);
 };
