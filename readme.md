@@ -1,14 +1,19 @@
-[![Powered by Virginia Commonwealth University](https://t4tools.vcu.edu/github/images/powered-by.svg?m8FJSmWfELQWFw)](http://www.vcu.edu/)
+[![Powered by Virginia Commonwealth University](https://t4tools.vcu.edu/github/images/powered-by.svg?Jv87L6id6XFPNN)](http://www.vcu.edu/)
 
 # VCUUtils.js Library
 *The Official VCU TerminalFour JS Library*
 
-![Version 2.0.1_04.22.2016](https://img.shields.io/badge/version-2.0.1__04.22.2016-lightgrey.svg)
-![Build Passing](https://img.shields.io/badge/build-passing-brightgreen.svg)
+![Version 2.1.0_04.22.2016](https://img.shields.io/badge/version-2.1.0__04.22.2016-lightgrey.svg)
+![Build Passing](https://img.shields.io/badge/build-testing-yellow.svg)
 ![Dev-Dependencies Up-To-Date](https://img.shields.io/badge/devDependencies-up--to--date-yellow.svg)
 
-## Version: 2.0.1
+## Version: 2.1.0
+*2.1.0*
+- Included parseTemp module
+    - .jade(string)
+*2.0.1*
 - Included todaysDate member
+*2.0.0*
 - Included parseInj module
     - .genInj(RegExp, startingInj, endingInj, string)
     - .classInj(string)
