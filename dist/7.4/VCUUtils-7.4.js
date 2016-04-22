@@ -16,7 +16,7 @@ var VCUUtils = (function(utils) {
     * @example
     * VCUUtils.version;
     */
-    utils.version = '2.0.0_04.22.2016';
+    utils.version = '2.1.0_04.22.2016';
 
     /**
     * Todays date as a formatted date string
@@ -39,11 +39,11 @@ var VCUUtils = (function(utils) {
 })(VCUUtils || {});
 
 /**
-* parseInj
+* parseInj - The Injector Parsing Module
 * @namespace parseInj
 * @extends VCUUtils
 * @author Joel Eisner <eisnerjr@vcu.edu>
-* @version 1.0.0
+* @version 1.0.1
 * @example
 * VCUUtils.parseInj
 */
@@ -82,16 +82,8 @@ VCUUtils.parseInj.genInj = function (rgx, injectorStart, injectorEnd, str) {
 * VCUUtils.parseInj.classInj(string);
 */
 VCUUtils.parseInj.classInj = function (str) {
-    // VCUUtils.parseInj.genInj
-    function parseInj (rgx, injectorStart, injectorEnd, str) {
-        var matchedStr = str.match(rgx);
-        if (null !== matchedStr) {
-            var r = matchedStr[0].replace(injectorStart, '').replace(injectorEnd, '');
-            return r;
-        }
-    }
     // Return of class:{...}
-    return parseInj(/class:{([^}]+)\}/g, 'class:{', '}', str);
+    return VCUUtils.parseInj.genInj(/class:{([^}]+)\}/g, 'class:{', '}', str);
 };
 
 /**
@@ -103,16 +95,8 @@ VCUUtils.parseInj.classInj = function (str) {
 * VCUUtils.parseInj.idInj(string);
 */
 VCUUtils.parseInj.idInj = function (str) {
-    // VCUUtils.parseInj.genInj
-    function parseInj (rgx, injectorStart, injectorEnd, str) {
-        var matchedStr = str.match(rgx);
-        if (null !== matchedStr) {
-            var r = matchedStr[0].replace(injectorStart, '').replace(injectorEnd, '');
-            return r;
-        }
-    }
     // Return of id:{...}
-    return parseInj(/id:{([^}]+)\}/g, 'id:{', '}', str);
+    return VCUUtils.parseInj.genInj(/id:{([^}]+)\}/g, 'id:{', '}', str);
 };
 
 /**
@@ -124,16 +108,8 @@ VCUUtils.parseInj.idInj = function (str) {
 * VCUUtils.parseInj.styleInj(string);
 */
 VCUUtils.parseInj.styleInj = function (str) {
-    // VCUUtils.parseInj.genInj
-    function parseInj (rgx, injectorStart, injectorEnd, str) {
-        var matchedStr = str.match(rgx);
-        if (null !== matchedStr) {
-            var r = matchedStr[0].replace(injectorStart, '').replace(injectorEnd, '');
-            return r;
-        }
-    }
     // Return of style:{...}
-    return parseInj(/style:{([^}]+)\}/g, 'style:{', '}', str);
+    return VCUUtils.parseInj.genInj(/style:{([^}]+)\}/g, 'style:{', '}', str);
 };
 
 /**
@@ -145,16 +121,8 @@ VCUUtils.parseInj.styleInj = function (str) {
 * VCUUtils.parseInj.layoutInj(string);
 */
 VCUUtils.parseInj.layoutInj = function (str) {
-    // VCUUtils.parseInj.genInj
-    function parseInj (rgx, injectorStart, injectorEnd, str) {
-        var matchedStr = str.match(rgx);
-        if (null !== matchedStr) {
-            var r = matchedStr[0].replace(injectorStart, '').replace(injectorEnd, '');
-            return r;
-        }
-    }
     // Return of layout:{...}
-    return parseInj(/layout:{([^}]+)\}/g, 'layout:{', '}', str);
+    return VCUUtils.parseInj.genInj(/layout:{([^}]+)\}/g, 'layout:{', '}', str);
 };
 
 /**
@@ -166,16 +134,8 @@ VCUUtils.parseInj.layoutInj = function (str) {
 * VCUUtils.parseInj.beforeInj(string);
 */
 VCUUtils.parseInj.beforeInj = function (str) {
-    // VCUUtils.parseInj.genInj
-    function parseInj (rgx, injectorStart, injectorEnd, str) {
-        var matchedStr = str.match(rgx);
-        if (null !== matchedStr) {
-            var r = matchedStr[0].replace(injectorStart, '').replace(injectorEnd, '');
-            return r;
-        }
-    }
     // Return of before:{...}
-    return parseInj(/before:{([^}]+)\}/g, 'before:{', '}', str);
+    return VCUUtils.parseInj.genInj(/before:{([^}]+)\}/g, 'before:{', '}', str);
 };
 
 /**
@@ -187,14 +147,78 @@ VCUUtils.parseInj.beforeInj = function (str) {
 * VCUUtils.parseInj.afterInj(string);
 */
 VCUUtils.parseInj.afterInj = function (str) {
-    // VCUUtils.parseInj.genInj
-    function parseInj (rgx, injectorStart, injectorEnd, str) {
-        var matchedStr = str.match(rgx);
-        if (null !== matchedStr) {
-            var r = matchedStr[0].replace(injectorStart, '').replace(injectorEnd, '');
-            return r;
-        }
-    }
     // Return of after:{...}
-    return parseInj(/after:{([^}]+)\}/g, 'after:{', '}', str);
+    return VCUUtils.parseInj.genInj(/after:{([^}]+)\}/g, 'after:{', '}', str);
+};
+
+/**
+* parseTemp - The Template Parsing Module
+* @namespace parseTemp
+* @extends VCUUtils
+* @author Joel Eisner <eisnerjr@vcu.edu>
+* @version 1.0.0
+* @example
+* VCUUtils.parseTemp
+*/
+/* jshint strict: false */
+VCUUtils.parseTemp = VCUUtils.parseTemp || {};
+
+/**
+* Finds jade syntax within a string and converts it to standard HTML
+* @function parseTemp.jade
+* @param {string} str - the string to parse for jade syntax
+* @returns {string} the string with jade syntax converted to standard HTML
+* @example
+* VCUUtils.parseTemp.jade(string);
+*/
+VCUUtils.parseTemp.jade = function (str) {
+    var regExp = /#\[([^\]]+)\]/g,
+        matches = str.match(regExp),
+        output = str,
+        cont = false,
+        elementType, el, render, attrStr, innerStr;
+    if (matches !== null) {
+        for (var i = 0; i < matches.length; i++) {
+            var match = matches[i],
+                elementRgx = /#\[([^\(]+)\(/g,
+                elementMatch = match.match(elementRgx);
+            if (elementMatch !== null) {
+                elementType = elementMatch[0].replace('#[', '').replace('(', '');
+                cont = true;
+            } else {
+                var newStruct = match.replace(' ', '|');
+                if (newStruct !== match) {
+                    el = newStruct.match(/#\[([^\|]+)\|/);
+                    var inner = newStruct.match(/\|([^\]]+)\]/);
+                    render = '<' + el[1] + '>' + inner[1] + '</' + el[1] + '>';
+                    output = output.replace(match, render);
+                } else {
+                    el = newStruct.replace('#[', '').replace(']', '');
+                    render = '<' + el + '></' + el + '>';
+                    output = output.replace(match, render);
+                }
+            }
+            var attrRgx = /\(([^\)]+)\)/g,
+                attrMatch = match.match(attrRgx);
+            if (attrMatch !== null) {
+                attrStr = " " + attrMatch[0].replace('(', '').replace(')', '').replace(/,/g, '');
+            } else {
+                attrStr = "";
+            }
+            var innerRgx = /\)([^\]]+)\]/g,
+                innerMatch = match.match(innerRgx);
+            if (innerMatch !== null) {
+                innerStr = innerMatch[0].replace(')', '').replace(']', '');
+            } else {
+                innerStr = "";
+            }
+            if (cont === true) {
+                var returnEl = '<' + elementType + attrStr + '>' + innerStr + '</' + elementType + '>';
+                output = output.replace(match, returnEl);
+            }
+        }
+        return output;
+    } else {
+        return output;
+    }
 };
