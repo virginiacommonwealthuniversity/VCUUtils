@@ -110,3 +110,16 @@ VCUUtils.parseInj.afterInj = function (str) {
     // Return of after:{...}
     return VCUUtils.parseInj.genInj(/after:{([^}]+)\}/g, 'after:{', '}', str);
 };
+
+/**
+* Matches a string for the cookie injector (i.e. cookie:{...})
+* @function parseInj.cookieInj
+* @param {string} str - the string to parse for the cookie injector
+* @returns {string} the string found within the injector
+* @example
+* VCUUtils.parseInj.cookieInj(string);
+*/
+VCUUtils.parseInj.cookieInj = function(str) {
+    // Return of cookie:{...}
+    return VCUUtils.parseInj.genInj(/cookie:{([^}]+)\}/g, 'cookie:{', '}', str);
+};
