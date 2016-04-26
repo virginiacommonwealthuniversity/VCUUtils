@@ -3,11 +3,15 @@
 # VCUUtils.js Library
 *The Official VCU TerminalFour JS Library*
 
-![Version 2.1.0_{{date-string}}](https://img.shields.io/badge/version-2.1.0__{{date-string}}-lightgrey.svg)
+![Version 2.1.1_{{date-string}}](https://img.shields.io/badge/version-2.1.1__{{date-string}}-lightgrey.svg)
 ![Build Passing](https://img.shields.io/badge/build-passing-brightgreen.svg)
 ![Dev-Dependencies Up-To-Date](https://img.shields.io/badge/devDependencies-up--to--date-yellow.svg)
 
-## Version: 2.1.0
+## Version: 2.1.1
+*2.1.1*
+- Added a parseInj function
+    - .cookieInj(string)
+
 *2.1.0*
 - Included parseTemp module
     - .jade(string)
