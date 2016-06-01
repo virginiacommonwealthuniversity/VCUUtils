@@ -34,6 +34,17 @@ var VCUUtils = (function(utils) {
         return today;
     })();
 
+    /**
+    * Document.write shorthand function
+    * @member docwrite
+    * @param {string} a string to be output on the page
+    * @example
+    * VCUUtils.docwrite(string);
+    */
+    utils.docwrite = function(string) {
+        document.write(string);
+    };
+
     return utils;
 
 })(VCUUtils || {});
