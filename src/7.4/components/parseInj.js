@@ -13,23 +13,23 @@ VCUUtils.parseInj = VCUUtils.parseInj || {};
 /**
 * Matches a string against a regex statement, and if true, returns the value between a beginning/ending injector
 * @function parseInj.genInj
-* @param {RegExp} rgx - regex statement to match against last parameter
-* @param {string} matchStart - start of injector
-* @param {string} macthEnd - end of injector
+* @param {string} tag - The tag you want to check for
 * @param {string} str - the string to parse for the injector
 * @returns {string} the string found within the injector
 * @example
-* VCUUtils.parseInj.genInj(/class:{([^}]+)\}/g, "class:{", "}", string);
+* VCUUtils.parseInj.genInj("class", string);
 */
-VCUUtils.parseInj.genInj = function (rgx, injectorStart, injectorEnd, str) {
-    // Try to match the regular expression against the string...
-    var matchedStr = str.match(rgx);
+VCUUtils.parseInj.genInj = function (tag, str) {
+    // Build a regex based off the tag given, then check the string against this
+    var injStart = tag + ':{',
+        injEnd = '}',
+        rgxStr = injStart + '([^' + injEnd + ']+)\\' + injEnd,
+        rgx = new RegExp(rgxStr, 'g'),
+        match = str.match(rgx);
     // If there's a match...
-    if (null !== matchedStr) {
+    if (match !== null) {
         // Remove the start and end of the injector...
-        var r = matchedStr[0].replace(injectorStart, '').replace(injectorEnd, '');
-        // ... and return what's in between them
-        return r;
+        return match[0].replace(injStart, '').replace(injEnd, '');
     }
 };
 
@@ -43,7 +43,7 @@ VCUUtils.parseInj.genInj = function (rgx, injectorStart, injectorEnd, str) {
 */
 VCUUtils.parseInj.classInj = function (str) {
     // Return of class:{...}
-    return VCUUtils.parseInj.genInj(/class:{([^}]+)\}/g, 'class:{', '}', str);
+    return VCUUtils.parseInj.genInj('class', str);
 };
 
 /**
@@ -56,7 +56,7 @@ VCUUtils.parseInj.classInj = function (str) {
 */
 VCUUtils.parseInj.idInj = function (str) {
     // Return of id:{...}
-    return VCUUtils.parseInj.genInj(/id:{([^}]+)\}/g, 'id:{', '}', str);
+    return VCUUtils.parseInj.genInj('id', str);
 };
 
 /**
@@ -69,7 +69,7 @@ VCUUtils.parseInj.idInj = function (str) {
 */
 VCUUtils.parseInj.styleInj = function (str) {
     // Return of style:{...}
-    return VCUUtils.parseInj.genInj(/style:{([^}]+)\}/g, 'style:{', '}', str);
+    return VCUUtils.parseInj.genInj('style', str);
 };
 
 /**
@@ -82,7 +82,7 @@ VCUUtils.parseInj.styleInj = function (str) {
 */
 VCUUtils.parseInj.layoutInj = function (str) {
     // Return of layout:{...}
-    return VCUUtils.parseInj.genInj(/layout:{([^}]+)\}/g, 'layout:{', '}', str);
+    return VCUUtils.parseInj.genInj('layout', str);
 };
 
 /**
@@ -95,7 +95,7 @@ VCUUtils.parseInj.layoutInj = function (str) {
 */
 VCUUtils.parseInj.beforeInj = function (str) {
     // Return of before:{...}
-    return VCUUtils.parseInj.genInj(/before:{([^}]+)\}/g, 'before:{', '}', str);
+    return VCUUtils.parseInj.genInj('before', str);
 };
 
 /**
@@ -108,7 +108,7 @@ VCUUtils.parseInj.beforeInj = function (str) {
 */
 VCUUtils.parseInj.afterInj = function (str) {
     // Return of after:{...}
-    return VCUUtils.parseInj.genInj(/after:{([^}]+)\}/g, 'after:{', '}', str);
+    return VCUUtils.parseInj.genInj('after', str);
 };
 
 /**
@@ -121,5 +121,5 @@ VCUUtils.parseInj.afterInj = function (str) {
 */
 VCUUtils.parseInj.cookieInj = function(str) {
     // Return of cookie:{...}
-    return VCUUtils.parseInj.genInj(/cookie:{([^}]+)\}/g, 'cookie:{', '}', str);
+    return VCUUtils.parseInj.genInj('cookie', str);
 };
