@@ -1,9 +1,9 @@
-[![Powered by Virginia Commonwealth University](https://t4tools.vcu.edu/github/images/powered-by.svg?lymk6L2srLBYQC)](http://www.vcu.edu/)
+[![Powered by Virginia Commonwealth University](https://t4tools.vcu.edu/github/images/powered-by.svg?v5DMoKLG68ORxu)](http://www.vcu.edu/)
 
 # VCUUtils.js Library
 *The Official VCU TerminalFour JS Library*
 
-![Version 2.1.1_04.26.2016](https://img.shields.io/badge/version-2.1.1__04.26.2016-lightgrey.svg)
+![Version 2.1.1_06.01.2016](https://img.shields.io/badge/version-2.1.1__06.01.2016-lightgrey.svg)
 ![Build Passing](https://img.shields.io/badge/build-passing-brightgreen.svg)
 ![Dev-Dependencies Up-To-Date](https://img.shields.io/badge/devDependencies-up--to--date-yellow.svg)
 
