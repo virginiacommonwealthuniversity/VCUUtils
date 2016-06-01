@@ -3,11 +3,15 @@
 # VCUUtils.js Library
 *The Official VCU TerminalFour JS Library*
 
-![Version 2.1.2_{{date-string}}](https://img.shields.io/badge/version-2.1.2__{{date-string}}-lightgrey.svg)
+![Version 2.2.0_{{date-string}}](https://img.shields.io/badge/version-2.2.0__{{date-string}}-lightgrey.svg)
 ![Build Passing](https://img.shields.io/badge/build-passing-brightgreen.svg)
 ![Dev-Dependencies Up-To-Date](https://img.shields.io/badge/devDependencies-up--to--date-yellow.svg)
 
-## Version: 2.1.2
+## Version: 2.2.0
+*2.2.0*
+- Added in `VCUUtils.docwrite(...)`
+    - Unlike T4Utils, this function does not wrap the string in any HTML
+
 *2.1.2*
 - Simplifed parseInj.genInj arguments
     - Old format: `VCUUtils.parseInj.genInj(/class:{([^}]+)\}/g, 'class:{', '}', string);`
