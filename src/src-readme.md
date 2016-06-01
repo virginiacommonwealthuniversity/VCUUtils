@@ -10,8 +10,8 @@
 ## Version: 2.1.2
 *2.1.2*
 - Simplifed parseInj.genInj arguments
-    - Old format: `parseInj.genInj(/class:{([^}]+)\}/g, 'class:{', '}', string);`
-    - New format: `parseInj.genInj('class', string);`
+    - Old format: `VCUUtils.parseInj.genInj(/class:{([^}]+)\}/g, 'class:{', '}', string);`
+    - New format: `VCUUtils.parseInj.genInj('class', string);`
 
 *2.1.1*
 - Added a parseInj function
