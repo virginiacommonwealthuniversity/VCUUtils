@@ -3,11 +3,16 @@
 # VCUUtils.js Library
 *The Official VCU TerminalFour JS Library*
 
-![Version 2.1.1_{{date-string}}](https://img.shields.io/badge/version-2.1.1__{{date-string}}-lightgrey.svg)
+![Version 2.1.2_{{date-string}}](https://img.shields.io/badge/version-2.1.2__{{date-string}}-lightgrey.svg)
 ![Build Passing](https://img.shields.io/badge/build-passing-brightgreen.svg)
 ![Dev-Dependencies Up-To-Date](https://img.shields.io/badge/devDependencies-up--to--date-yellow.svg)
 
-## Version: 2.1.1
+## Version: 2.1.2
+*2.1.2*
+- Simplifed parseInj.genInj arguments
+    - Old format: `parseInj.genInj(/class:{([^}]+)\}/g, 'class:{', '}', string);`
+    - New format: `parseInj.genInj('class', string);`
+
 *2.1.1*
 - Added a parseInj function
     - .cookieInj(string)
