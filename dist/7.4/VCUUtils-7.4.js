@@ -259,6 +259,9 @@ VCUUtils.parseTemp.jade = function (str) {
 /* jshint strict: false */
 VCUUtils.sort = VCUUtils.sort || {};
 
+VCUUtils.sort.array = VCUUtils.sort.array || {};
+VCUUtils.sort.array.viaObjectKey = VCUUtils.sort.array.viaObjectKey || {};
+
 /**
 * Alphebetically bubble-sorts an array via an object key
 * @function sort.array.viaObjectKey
