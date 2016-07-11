@@ -1,13 +1,17 @@
-[![Powered by Virginia Commonwealth University](https://t4tools.vcu.edu/github/images/powered-by.svg?8FusmRfQ8xZXc4)](http://www.vcu.edu/)
+[![Powered by Virginia Commonwealth University](https://t4tools.vcu.edu/github/images/powered-by.svg?n91D9ktfO1K7Pj)](http://www.vcu.edu/)
 
 # VCUUtils.js Library
 *The Official VCU TerminalFour JS Library*
 
-![Version 2.3.0_06.13.2016](https://img.shields.io/badge/version-2.3.0__06.13.2016-lightgrey.svg)
+![Version 2.4.0_07.11.2016](https://img.shields.io/badge/version-2.4.0__07.11.2016-lightgrey.svg)
 ![Build Passing](https://img.shields.io/badge/build-passing-brightgreen.svg)
 ![Dev-Dependencies Up-To-Date](https://img.shields.io/badge/devDependencies-up--to--date-yellow.svg)
 
-## Version: 2.3.0
+## Version: 2.4.0
+*2.4.0*
+- Include siteConfig module
+    - .nameSpaceExists(object)
+
 *2.3.0*
 - Included sort module
     - .array.viaObjectKey(array, string)
@@ -53,7 +57,6 @@ $ npm i
 ```
 $ gulp
 ```
-Keep in mind that compiling **will fail** if any JSHint warnings or errors pop up; this is to ensure the cleanest syntax possible for a maintainable codebase.
 
 ## Documentation
 Upon successful completion of compiling the library, documentation will automatically be included in a `docs` directory. This contains a complete HTML site structure that provides searchable documentation for the library.
