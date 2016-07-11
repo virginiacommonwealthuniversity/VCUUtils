@@ -1,6 +1,5 @@
-'use strict';
+// Require ---------------------------------------------------------------------
 
-// Require
 var del = require('del'),
     gulp = require('gulp'),
     concat = require('gulp-concat'),
@@ -12,7 +11,10 @@ var del = require('del'),
     uglify = require('gulp-uglify'),
     stylish = require('jshint-stylish'),
     config = require('./gulpconfig.js'),
-    functions = require('./gulpfunctions.js');
+    functions = require('./gulpfunctions.js'),
+    pkg = require('./package.json');
+
+// -----------------------------------------------------------------------------
 
 // Default task
 gulp.task('default', ['build']);
@@ -30,6 +32,7 @@ gulp.task('clean', function() {
 gulp.task('readme', function() {
     return gulp.src('./src/src-readme.md')
         .pipe(replace(/\{\{random-query\}\}/g, functions.randomQuery))
+        .pipe(replace(/\{\{pkg-version\}\}/g, pkg.version))
         .pipe(replace(/\{\{date-string\}\}/g, functions.dateString))
         .pipe(rename('readme.md'))
         .pipe(gulp.dest('./'));
@@ -39,32 +42,26 @@ gulp.task('readme', function() {
 gulp.task('build-library', ['library-exp', 'library-min', 'library-doc']);
 
 // Build library (expanded) task
-gulp.task('library-exp', ['library-lint'], function() {
+gulp.task('library-exp', function() {
     return gulp.src(config.v74.input)
         .pipe(concat(config.v74.filename.expanded))
+        .pipe(replace(/\{\{pkg-version\}\}/g, pkg.version))
         .pipe(replace(/\{\{date-string\}\}/g, functions.dateString))
         .pipe(gulp.dest(config.v74.output));
 });
 
 // Build library (minified) task
-gulp.task('library-min', ['library-lint'], function() {
+gulp.task('library-min', function() {
     return gulp.src(config.v74.input)
         .pipe(concat(config.v74.filename.minified))
+        .pipe(replace(/\{\{pkg-version\}\}/g, pkg.version))
         .pipe(replace(/\{\{date-string\}\}/g, functions.dateString))
         .pipe(uglify())
         .pipe(gulp.dest(config.v74.output));
 });
 
 // Document library task
-gulp.task('library-doc', ['library-lint'], function(doc) {
+gulp.task('library-doc', function(doc) {
     gulp.src(config.v74.input, {read: false})
         .pipe(jsdoc(doc));
-});
-
-// Lint library task
-gulp.task('library-lint', function() {
-    return gulp.src(config.v74.input)
-        .pipe(jshint())
-        .pipe(jshint.reporter(stylish, {verbose: true}))
-        .pipe(jshint.reporter('fail'));
 });
