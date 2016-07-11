@@ -5,7 +5,7 @@
 * VCUUtils
 * @module
 * @author Joel Eisner <eisnerjr@vcu.edu>
-* @version 2.0.0
+* @version {{pkg-version}}
 */
 var VCUUtils = (function(utils) {
 
@@ -16,7 +16,7 @@ var VCUUtils = (function(utils) {
     * @example
     * VCUUtils.version;
     */
-    utils.version = '2.1.2_{{date-string}}';
+    utils.version = '{{pkg-version}}_{{date-string}}';
 
     /**
     * Todays date as a formatted date string
