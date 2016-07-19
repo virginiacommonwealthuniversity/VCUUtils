@@ -4,7 +4,6 @@ module.exports = {
             './src/7.4/VCUUtils.js',
             './src/7.4/components/parseInj.js',
             './src/7.4/components/parseTemp.js',
-            './src/7.4/components/siteConfig.js',
             './src/7.4/components/sort.js'
         ],
         filename: {
