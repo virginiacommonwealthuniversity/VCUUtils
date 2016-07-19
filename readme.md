@@ -1,13 +1,17 @@
-[![Powered by Virginia Commonwealth University](https://t4tools.vcu.edu/github/images/powered-by.svg?n91D9ktfO1K7Pj)](http://www.vcu.edu/)
+[![Powered by Virginia Commonwealth University](https://t4tools.vcu.edu/github/images/powered-by.svg?hQjY6cf5xcn4Qt)](http://www.vcu.edu/)
 
 # VCUUtils.js Library
 *The Official VCU TerminalFour JS Library*
 
-![Version 2.4.0_07.11.2016](https://img.shields.io/badge/version-2.4.0__07.11.2016-lightgrey.svg)
+![Version 2.4.1_07.19.2016](https://img.shields.io/badge/version-2.4.1__07.19.2016-lightgrey.svg)
 ![Build Passing](https://img.shields.io/badge/build-passing-brightgreen.svg)
 ![Dev-Dependencies Up-To-Date](https://img.shields.io/badge/devDependencies-up--to--date-yellow.svg)
 
 ## Version: 2.4.0
+*2.4.1*
+- Removed siteConfig module
+    - This module did not work as intended, and has been found to be unnecessary at the current time
+
 *2.4.0*
 - Include siteConfig module
     - .nameSpaceExists(object)

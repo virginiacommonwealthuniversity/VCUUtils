@@ -8,6 +8,10 @@
 ![Dev-Dependencies Up-To-Date](https://img.shields.io/badge/devDependencies-up--to--date-yellow.svg)
 
 ## Version: 2.4.0
+*2.4.1*
+- Removed siteConfig module
+    - This module did not work as intended, and has been found to be unnecessary at the current time
+
 *2.4.0*
 - Include siteConfig module
     - .nameSpaceExists(object)
