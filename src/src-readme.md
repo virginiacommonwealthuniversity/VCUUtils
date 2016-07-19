@@ -7,7 +7,7 @@
 ![Build Passing](https://img.shields.io/badge/build-passing-brightgreen.svg)
 ![Dev-Dependencies Up-To-Date](https://img.shields.io/badge/devDependencies-up--to--date-yellow.svg)
 
-## Version: 2.4.0
+## Version: 2.4.1
 *2.4.1*
 - Removed siteConfig module
     - This module did not work as intended, and has been found to be unnecessary at the current time

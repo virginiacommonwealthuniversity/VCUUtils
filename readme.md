@@ -1,4 +1,4 @@
-[![Powered by Virginia Commonwealth University](https://t4tools.vcu.edu/github/images/powered-by.svg?hQjY6cf5xcn4Qt)](http://www.vcu.edu/)
+[![Powered by Virginia Commonwealth University](https://t4tools.vcu.edu/github/images/powered-by.svg?SYx5TjXAj3Cnny)](http://www.vcu.edu/)
 
 # VCUUtils.js Library
 *The Official VCU TerminalFour JS Library*
@@ -7,7 +7,7 @@
 ![Build Passing](https://img.shields.io/badge/build-passing-brightgreen.svg)
 ![Dev-Dependencies Up-To-Date](https://img.shields.io/badge/devDependencies-up--to--date-yellow.svg)
 
-## Version: 2.4.0
+## Version: 2.4.1
 *2.4.1*
 - Removed siteConfig module
     - This module did not work as intended, and has been found to be unnecessary at the current time
