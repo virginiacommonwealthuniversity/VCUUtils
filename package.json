@@ -1,6 +1,6 @@
 {
   "name": "vcu-utils",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "description": "The VCU-Utils JS Library for TerminalFour",
   "author": "Joel Eisner <eisnerjr@vcu.edu>",
   "repository": {
